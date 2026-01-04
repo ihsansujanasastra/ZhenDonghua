@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<script>
+function goToAbout(select) {
+    const url = select.value; 
+    if(url) {                 
+        window.location.href = url; 
+    }
+}
+</script>
+<body>
+
+    <nav class="navbar">
+  <div class="brand">Zhen Web</div>
+
+  <ul class="nav-links">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <!-- ABOUT SELECT -->
+    <li class="about-dropdown">
+      <select onchange="goToAbout(this)">
+        <option value="">About</option>
+        <option value="about-wanglin.html">Renegade Immortal</option>
+        <option value="about-swallowedstar.html">Swallowed Star</option>
+        <option value="about-soulland.html">Soul Land</option>
+        <option value="about-btth.html">Battle Through The Heavens</option>
+        <option value="about-ts.html">Throne of Seal</option>
+        <option value="about-tomb.html">Tomb of Fallen Gods</option>
+      </select>
+    </li>
+    <li>
+      <a href="gallery.html">Gallery</a>
+    </li>
+    <li>
+      <a href="contact.html">Contact</a>
+    </li>
+  </ul>
+</nav> 
+
+<!-- BANNER -->
+  <div class="banner">
+      <div class="greeting" id="greeting">Selamat...</div>
+      <div class="clock" id="clock">00:00:00</div>
+      <div class="date" id="date">Hari, DD MMMM YYYY</div>
+  </div>
+
+  <!-- FORMULIR -->
+<div class="form-container">
+  <h2>Kirim Kritik Dan Saranmu Ke Aku Ya Readers !!</h2>
+  <form id="feedbackForm">
+    <div class="form-group">
+      <label for="name">name:</label>
+      <input type="text" id="name" name="name" placeholder="Masukkan nama Kamu" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Masukkan email Kamu" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Kritik & Saran:</label>
+      <textarea id="message" name="message" placeholder="Tulis kritik atau saran Kamu Disini Yaa!!" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Kirim</button>
+  </form>
+</div>
+
+<!-- Popup -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <p>Terima kasih Telah Memberi Kritik Dan Saran Untuk Web Mimin Readers !!🤩👋.</p>
+  </div>
+</div>
+
+<!-- Sosial Media -->
+      <div class="footer-section">
+        <h3>Support Sosial Media Mimin Ya Readers !!🤩</h3>
+        <a href="https://www.instagram.com/exzsanzzz?igsh=MTU4eGc0eHAzNXQ4ag==" class="social">
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+        <a href="https://www.tiktok.com/@callme.drixie?_r=1&_t=ZS-92lRHqRSINe" class="social">
+          <i class="fa-brands fa-tiktok"></i> TikTok
+        </a>
+      </div>
+
+  <!-- FOOTER copyright -->
+<div class="footer-bottom">
+      &copy; 2026 Ihsan Sujanasastra | 251011700262 | 01SIFP004
+    </div>
+<script>
+function updateTime() {
+    const now = new Date();
+
+    // Keterangan waktu
+    const hours = new Date().getHours();
+let greetingText = '';
+
+if (hours >= 4 && hours < 10) {
+  greetingText = 'Selamat Pagi Readers 🤩👋';
+} else if (hours >= 10 && hours < 15) {
+  greetingText = 'Selamat Siang Readers 🤩👋';
+} else if (hours >= 15 && hours < 18) {
+  greetingText = 'Selamat Sore Readers 🤩👋';
+} else {
+  greetingText = 'Selamat Malam Readers 🤩👋';
+}
+
+document.getElementById('greeting').innerHTML = greetingText;
+    // Jam digital
+    const hh = String(now.getHours()).padStart(2, '0');
+    const mm = String(now.getMinutes()).padStart(2, '0');
+    const ss = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('clock').textContent = `${hh}:${mm}:${ss}`;
+
+    // Tanggal lengkap
+    const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 
+                    'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+    const dayName = days[now.getDay()];
+    const date = now.getDate();
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+    document.getElementById('date').textContent = `${dayName}, ${date} ${month} ${year}`;
+}
+
+// Update setiap detik
+setInterval(updateTime, 1000);
+updateTime();
+</script>
+<script>
+// Ambil elemen
+const form = document.getElementById('feedbackForm');
+const popup = document.getElementById('popup');
+const closeBtn = document.querySelector('.close-btn');
+
+// Saat form disubmit
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); 
+    popup.style.display = 'flex';
+    form.reset(); 
+});
+
+// Tutup popup saat klik tombol x
+closeBtn.addEventListener('click', function() {
+    popup.style.display = 'none';
+});
+
+// Tutup popup jika klik di luar konten
+window.addEventListener('click', function(e) {
+    if(e.target === popup) {
+        popup.style.display = 'none';
+    }
+});
+</script>
+</body>
+</html>

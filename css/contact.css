@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #140172, #010c40);
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  background: #111;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.nav-links li a:hover {
+  background-color: #202e41;
+}
+
+/* DROPDOWN */
+.about-dropdown select {
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.about-dropdown select:focus {
+  outline: none;
+  border-color: #7b3fe4;
+}
+
+/* BANNER */
+.banner {
+  margin: 90px auto 0; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px 30px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  color: white;
+}
+
+/* BANNER TEXT */
+.greeting,
+.clock,
+.date {
+  flex: 1;
+}
+
+.greeting {
+  text-align: left;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.clock {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.date {
+  text-align: right;
+  font-size: 1.1em;
+}
+ .form-container {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(0,0,0,0.6);
+    margin: 20px auto 50px auto;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  }
+
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    color: #ffd700;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .form-group input, 
+  .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffd700;
+    color: #1a1a1a;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    background-color: #e6c200;
+}
+
+.submit-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* POPUP */
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: #fff;
+    color: #1a1a1a;
+    padding: 25px 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    font-size: 1.2em;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+}
+/* Footer sosial media*/
+.footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 30px 20px;
+  text-align: center; /* pastikan semua center */
+}
+
+.footer-section {
+  text-align: center; /* pusatkan header + link sosial */
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  color: #ffd700;
+}
+
+.footer-section .social {
+  display: inline-block; /* supaya bisa diberi margin */
+  margin: 8px 12px;
+  padding: 8px 15px;
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+.footer-section .social i {
+  margin-right: 8px;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.footer-section .social:hover {
+  background: #ffd700;
+  color: #1a1a1a;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  background-color: #111;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 10px;
+}
